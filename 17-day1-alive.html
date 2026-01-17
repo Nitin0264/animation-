@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap</title>
+    <style>
+
+
+    .container
+    {
+      height: 100vh;
+      background-color: bisque;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+    }
+    .box
+    {
+      height: 200px;
+      width: 200px;
+      background-color: coral;
+      border: 2px solid rgba(0, 0, 0, 0.281);
+     border-radius: 10px;
+         }
+  </style>
+
+  </head>
+  <body>
+
+    <!-- gsap -->
+
+    <div class="container">
+
+      <h1>this is</h1>
+      <h1>this  animation </h1>
+      <h1> first animation class</h1>
+      <h1>this is  animation class</h1>
+      <h1>this is my first animation class</h1>
+      
+      <!-- <div class="box"></div> -->
+    </div>
+
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script>
+          // gsap.to(".box",
+          // {
+          //   x:400,
+          //   duration:1.5,
+          //   rotate:720,
+          //   y:200,
+          //   repeat:-1,
+          //   yoyo:true, 
+          // })
+          // gsap.from(".box",
+          // {
+          //   x:400,
+          //   duration:1.5,
+          //   rotate:720,
+          //   y:200,
+          //   repeat:-1,
+          //   yoyo:true,
+          //   opacity:0, 
+          // })
+          gsap.from("h1",
+          {
+            opacity:0, 
+            y:-20,
+            x:-40,
+            stagger:0.3,
+            repeat:2,
+            backgroundColor:"black",
+           })
+        
+
+
+// yoyo will help returning  the box
+// stagger delaying the animation one by one to every tag
+      </script>
+  </body>
+</html>
