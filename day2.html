@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *
+    {
+      padding: 0;
+      margin: 0;
+    }
+    section{
+      height:100vh;
+      width:100%;
+      background-color: aqua;
+    }
+    .container
+    {
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.582);
+    }
+    .box
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .bar{
+      position: fixed;
+      height: 10px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: red;
+      transform: scaleX(0);
+      transform-origin:left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bar"> </div>
+
+  <section> </section>
+  <section> </section>
+  <section> </section>
+
+  
+
+
+
+    <!-- timeline() we will do one by one or set them time by time timeline provide us the sequence  -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+<!-- stagger move one by oine but need the same axis for all  -->
+      <script>
+
+    //    let x =  gsap.timeline()
+    //  x.to(".h1",{
+    //   x:100,
+    //   duration:1
+    //  })
+    //  .to(".h2",{
+    //   x:200,
+    //   // delay:1,
+    //   duration:1
+    //  })
+    //  .to(".h3",{
+    //   x:300,
+    //   // delay:2,
+    //   duration:1
+    //  })
+    //  .to(".h4",{
+    //   x:400,
+    //   duration:1,
+    //   // delay:3
+    //  })
+
+    gsap.to("h1",{
+      x:200,
+      top:"50%",
+      left:"50%",
+      stagger:0.4,
+      xPercent:-50,
+      yPercent:-50,
+    })
+
+    gsap.to(".bar",{
+    scaleX:1,
+      scrollTrigger:{
+        trigger:"body",
+        scrub:2,
+        // markers:true,
+        pin:true,
+        // start:"center center",
+        start:"top top",
+        // the first start indicades that animation will strt when  our div container touch the second property means it will run when our container center touches the center of the body that its means our start point is the  div center part and the scroll stragger is the point where our container meet the center point of the body
+        end:"bottom bottom"
+      }
+    })
+
+    // scrub    
+    // scroll trrigger
+      </script>
+</body>
+</html>
